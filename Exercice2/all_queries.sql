@@ -39,12 +39,12 @@ SELECT film_id, title, description, length, rental_rate FROM film WHERE title LI
 
 -- 10. Write a query which will find the 10 cheapest movies.
 
-SELECT * FROM film ORDER BY rental_rate LIMIT 10;
+SELECT * FROM film ORDER BY rental_rate LIMIT 10;           -- By default the order will be ASC
 
 
 
 -- 11. Not satisfied with the results. Write a query which will find the next 10 cheapest movies
-SELECT * FROM film ORDER BY rental_rate
+SELECT * FROM film ORDER BY rental_rate             -- By default the order will be ASC
 OFFSET 10 ROW 
 FETCH FIRST 10 ROW ONLY;
 
