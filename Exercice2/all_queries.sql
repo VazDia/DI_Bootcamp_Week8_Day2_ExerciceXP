@@ -3,7 +3,7 @@
 SELECT * FROM customer;
 
 -- 2. Write a query to display the names (first_name, last_name) using an alias named “full_name”.
-SELECT (first_name, last_name) AS full_name FROM customer;
+SELECT first_name||' '||last_name AS full_name FROM customer;
 
 
 -- 3. Lets get all the dates that accounts were created. Write a query to select all the create_date from the “customer” table (there should be no duplicates).
@@ -39,12 +39,12 @@ SELECT film_id, title, description, length, rental_rate FROM film WHERE title LI
 
 -- 10. Write a query which will find the 10 cheapest movies.
 
-SELECT * FROM film ORDER BY replacement_cost LIMIT 10;
+SELECT * FROM film ORDER BY rental_rate LIMIT 10;
 
 
 
 -- 11. Not satisfied with the results. Write a query which will find the next 10 cheapest movies
-SELECT * FROM film ORDER BY replacement_cost
+SELECT * FROM film ORDER BY rental_rate
 OFFSET 10 ROW 
 FETCH FIRST 10 ROW ONLY;
 
